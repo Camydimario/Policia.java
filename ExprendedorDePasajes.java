@@ -1,4 +1,5 @@
 //clase 
+//costo
 public class ExpendedorDePasajes {
 //atributos
 private double precioPorKm;
