@@ -1,5 +1,5 @@
 // clase
-
+//costo
 
 public class Cerradura {
     //atributos
