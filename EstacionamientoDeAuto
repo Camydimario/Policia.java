@@ -1,0 +1,188 @@
+/*
+*Se construye a partir de la cantidad de lugares disponibles.
+*Ocupar el lugar indicado por su número.
+*Desocupar el lugar indicado por su número.
+*Calcular el porcentaje de lugares que están ocupados.
+*Contar la cantidad de veces que fue usado (ocupado y desocupado) un lugar.
+*Devolver la cantidad de lugares que han sido usados más que la cantidad indicada por parámetro
+ */
+
+public class EstacionamientoDeAutos {
+private int LugaresDisponibles;
+private boolean estalibre;
+private int ocupar =0;
+
+private int vecesUsado;
+private int NumeroLugar;
+private int desocupado =0;
+private int ocupado;
+private int total;
+
+/*Pre: Se construye a partir de la cantidad de lugares disponibles. 
+ * Post : el estacionamiento tiene un lugar indicado para meter el auto
+*/
+public EstacionamientoDeAutos(int LugaresDisponibles){
+    this.LugaresDisponibles = LugaresDisponibles;
+     this.estalibre = true;
+}
+
+/*Post: se determina la cantidad de lugares disponibles */
+    public int CantidadDeLugaresDisponibles() {
+        if(LugaresDisponibles > 0 && LugaresDisponibles < 30){
+            LugaresDisponibles = estalibre;
+        }
+       
+ return LugaresDisponibles;
+    }
+
+
+/*Post: se ocupa un lugar indicado por su numero */
+public void ocuparLugar(int NumeroLugar, int [] lugar){
+    if (estalibre) {
+    for( int i = 0; i < lugar.length; i ++){
+      if (lugar[i] == 0) {
+        lugar[i] = NumeroLugar ; 
+        
+       ocupar++;
+        //ocupar += NumeroLugar;
+       
+        
+    
+    }   
+ }}
+
+}
+
+
+//LugaresDisponibles == desocupado
+
+/*Post: se desocupa un lugar indicado por su numero */
+
+public void DesocuparLugar(int NumeroLugar, int [] lugar ){
+for( int i = 0; i < lugar.length; i ++){
+       if (lugar[i] == NumeroLugar) {
+      lugar[i] = 0;
+        desocupado++;
+    //if( LugaresDisponibles < ocupado){
+     //estalibre = true;
+    // desocupado += NumeroLugar;
+      //LugaresDisponibles++;
+      //estalibre = false;
+       //desocupado++;
+
+
+   }}}
+
+
+/*post: calcular el porcentaje de lugares ocupados */
+public double PorcentajesDeLugaresOcupados(int [] lugar ) {
+   
+     for( int i = 0; i < lugar.length; i ++){
+        total += lugar[i];
+}
+return total / lugar.length * 100; 
+
+}
+
+public ContadorDeLugaresOcupados(int numeroLugar) {
+     this.NumeroLugar = numeroLugar;
+}
+
+/*Post : se cuenta la cantidad de veces que se ocupo un lugar */
+
+public int ContarVecesOcupado( int [] lugar ){  
+   int ocupar = 0;
+    for( int i = 0; i < lugar.length; i ++){
+        if(lugar[i] != 0 ){
+             ocupar++;
+           // vecesUsado++;
+        }
+}
+
+return ocupar;
+}
+
+/*Post : se cuenta la cantidad de veces que se desocupo un lugar */
+public int ContarVecesDesocupado(int [] lugar ){
+int  desocupado= 0; 
+    // int totaldesocupado = 0;
+        for( int i = 0; i < lugar.length; i ++){
+            if(lugar[i] == NumeroLugar ){ // numero
+               desocupado++;
+               // totaldesocupado++;
+              //  vecesUsado--;
+
+
+            }
+        }
+
+    return  desocupado;
+    }
+
+
+/*Post: Devolver la cantidad de lugares que han sido usados
+ más que la cantidad indicada por parámetro.  */
+
+public int ContarLugaresUsadosmasveces(int [] lugar ){
+    int total =0;   
+    for( int i = 0; i < lugar.length; i ++){
+        if(lugar[i] > NumeroLugar ){
+           total ++;
+
+        }}
+    return total;
+    
+}
+
+public static void main(String[] args) {
+    
+    EstacionamientoDeAutos esta = new EstacionamientoDeAutos(20);
+    int [] lugar = {1,1,3,4,5,6,7,8,9,10,11};
+    
+   // int lugaresOcupados = esta.ContarVecesOcupado(lugar);
+esta.ocuparLugar(1, lugar);
+esta.ocuparLugar(2, lugar);
+esta.ocuparLugar(3, lugar);
+esta.ocuparLugar(0, lugar);
+esta.ocuparLugar(0, lugar);
+//esta.ocuparLugar(6, lugar, false);
+
+
+
+
+esta.DesocuparLugar(1, lugar);
+esta.DesocuparLugar(2, lugar);
+esta.DesocuparLugar(3, lugar);
+esta.DesocuparLugar(4, lugar);
+esta.DesocuparLugar(5, lugar);
+esta.DesocuparLugar(6, lugar);
+esta.DesocuparLugar(7, lugar);
+esta.DesocuparLugar(0, lugar);
+
+
+ System.out.println("porcentaje: " + esta.PorcentajesDeLugaresOcupados(lugar));
+ System.out.println("veces ocupados: " + esta.ContarVecesOcupado(lugar));
+  System.out.println("veces desocupados: " + esta.ContarVecesDesocupado(lugar));
+ System.out.println("El lugar mas ocupado fue: " + esta.ContarLugaresUsadosmasveces(lugar));
+
+
+
+}
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
