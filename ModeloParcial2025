@@ -1,0 +1,74 @@
+public class ModeloP {
+
+public ModeloP(){
+
+
+}
+
+/*
+ * en java escribir una array de enteros por parametros y
+ *  devuelva el maximo valor encontrado y cuantas veces se repita .
+ * 
+ * 
+ * 
+ */
+//modo 1
+public int[] contarMaximos(int[] valores) {
+    int maximo = valores[0];
+    int contar =0;
+     for (int i = 0; i < valores.length; i++) {
+        if (valores[i] > maximo) {
+            maximo = valores[i];
+            //contar = 1;
+        }  else if (valores[i] == maximo) {
+               contar++;
+        }
+
+    }
+    return new int[] {maximo, contar};
+
+}
+
+//modo 2 efectivo
+public int [] contarMaximos2(int[] valores) {
+int maximo = valores[0];
+int contar= 0;
+    for (int i = 0; i < valores.length; i++) {
+     if (valores[i] > maximo) {
+     maximo = valores[i];
+ }    
+ }
+
+//int contar= 0;
+
+   for (int i = 0; i < valores.length; i++) {
+         if (valores[i] == maximo) { /*puede no ir tambien */
+            contar++;
+         }
+
+
+        }
+return new int []{maximo,contar};
+
+
+}
+
+
+public static void main(String[] args) {
+    
+    ModeloP modelo = new ModeloP();
+    int [] valores = {4,3,4,2,4,-9,0,4};
+   int [] resultado = modelo.contarMaximos(valores);
+      int [] resultado2 = modelo.contarMaximos2(valores);
+
+System.out.println("el amximo valor es: " + resultado[0]);
+System.out.println("el amximo valor es: " + resultado[1]);
+System.out.println("el amximo valor es: " + resultado2[0]);
+//System.out.println("valor maximo " + modelo.contarMaximos(valores));
+
+
+
+}
+
+
+}
