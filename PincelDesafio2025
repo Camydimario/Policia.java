@@ -1,0 +1,44 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * Write a description of class PincelDesafio2025 here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class PincelDesafio2025 extends PincelBase
+{    public void pintar() {
+        int tamaño = obtenerTamañoDelLienzo();
+
+        for(int i =0;i<tamaño-1;i++){
+            for (int j=0;j<tamaño-1;j++){
+                if (i==0 || j==0 ){
+                    pintar(i,j);
+                }
+
+            }
+        }
+        for(int i = tamaño-2; i <=tamaño-2; i++){
+            for(int j =1; j <=tamaño/2-1; j++){
+
+                pintar(i, j);
+            }
+        }
+        for(int i = 1; i <=tamaño/2-1; i++){
+            for(int j =tamaño-2; j <=tamaño-2; j++){
+
+                pintar(i, j);
+            }
+        }
+        for(int i =tamaño/2;i<tamaño;i++){
+            for (int j = tamaño/2;j<tamaño;j++){
+                if (i==tamaño/2|| i== tamaño-1 || j==tamaño/2 ||j==tamaño-1){
+                    pintar(i,j);
+                }
+
+            }
+        }
+
+    }
+}
+    
