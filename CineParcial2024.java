@@ -36,8 +36,29 @@ public static void main (String [] args){
  cine.contizarAsientosLibres(6);
 }
 
-
-
+-----------------------------------------------------------------------------------------------------------------------
+o tambien
+public double contizarAsientosLibres(int cantidad){
+double precio =0;
+int cantidadAsientosLibres =0;
+for ( int i = 0;i < butacas.length; i ++){
+    for(int j = 0; j < butacas[i].length; j++){
+        if(butacas[i][j] == 0){
+            cantidadAsientosLibres ++;
+            estaocupado= true;
+       //if ( butacas[i][j] == cantidadAsientosLibres && !estaocupado){
+           // cantidadAsientosLibres ++;
+            preciototal += precio;
+            //return precio;
+           if(cantidadAsientosLibres >= cantidad){
+            return preciototal;
+           }
+        }
+    }}
+    
+    return cantidadAsientosLibres;
+} 
+    
 
 
 }
